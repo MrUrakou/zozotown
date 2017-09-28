@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+DB設計
+
+## users table
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, add_index: true|
+|email|string|null: false|
