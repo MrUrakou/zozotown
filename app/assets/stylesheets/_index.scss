@@ -1,0 +1,209 @@
+.site-title {
+  color: white;
+  font-size: 24px;
+  line-height: 50px;
+  float: left;
+  margin-left: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.current-cart-quantity {
+  position: absolute;
+  top: 5px;
+  right: 195px;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: red;
+  & p {
+    color: #fff;
+    font-size: 3px;
+    text-align: center;
+  }
+}
+
+.fa {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+  float: right;
+  margin: 15px 40px 0 0;
+  &:hover {
+    color: #ff325a;
+  }
+  &.fa-sign-in {
+    margin-top: 13px;
+    font-size: 24px;
+  }
+}
+
+.nav__bar {
+  background-color: #323232;
+  width: 100vw;
+  height: 50px;
+  .login,
+  .new-user,
+  .logout,
+  .product-edit,
+  .user-edit,
+  .user-cart,
+  .admin-user-edit {
+    height: 50px;
+    width: 80px;
+    font-size: 20px;
+    float: right;
+  }
+}
+
+
+
+.left__contents_product-category-list_title,
+.left__contents_product-search-method_title {
+  margin: 0 10px 0 10px;
+  font-size: 20px;
+}
+
+.contents {
+  margin: 0 auto;
+  height: 2300px;
+  width: 1000px;
+  .main_contents {
+    height: 100%;
+    .left__contents {
+      width: 150px;
+      height: 2000px;
+      float: left;
+      .left__contents_search-method,
+      .left__contents_product-category-list {
+        margin-top: 30px;
+      }
+      .left__contents_product-search-method_list,
+      .left__contents_product-category-list_product-name {
+        margin: 0 10px 0 10px;
+        height: 40px;
+        font-size: 11px;
+        line-height: 40px;
+        border-style: solid;
+        border-color: gray;
+        border-width: 0 0 1px 0;
+        transition: background-color 0.3s linear;
+      }
+    }
+    .right__contents {
+      width: 200px;
+      height: 2000px;
+      float: left;
+      .right-contents-top-pop {
+        width: 200px;
+        height: 250px;
+        margin-top: 30px;
+      }
+      .right-contents-bottom-pop {
+        width: 200px;
+        height: 50px;
+        margin-top: 20px;
+      }
+      .right__contents_shop-news-title {
+        width: 200px;
+        height: 30px;
+        font-size: 20px;
+        margin-top: 50px;
+      }
+      .right__contents_shop-news-list {
+        width: 200px;
+        height: 120px;
+        font-size: 14px;
+        border-style: solid;
+        border-color: gray;
+        border-width: 1px 0 0 0;
+      }
+      .right-contents-shop-pop {
+        width: 80px;
+        height:100px;
+        margin: 5px 5px 5px 0;
+        float: left;
+      }
+      .shop-news-detail_title {
+        font-size: 12px;
+        color: #999;
+      }
+      .shop-news-detail_description {
+        font-size: 14px;
+        color: #333;
+      }
+    }
+  }
+}
+
+
+.left__contents_product-search-method_list:hover {
+  background-color: #eee;
+  transition: background-color 0.1s linear;
+}
+
+.left__contents_product-category-list_product-name:hover {
+  background-color: #eee;
+  transition: background-color 0.1s linear;
+}
+
+.footer {
+  background-color: #eee;
+  width: 100vw;
+  height: 300px;
+}
+
+
+  // &:after {
+  //   clear: both;
+  //   content: "";
+  //   display: block;
+  // }
+
+
+
+
+
+//おあそび
+
+.right__contents_sale {
+  width: 200px;
+  height: 250px;
+  margin-top: 20px;
+  overflow:   hidden;
+  position:   relative;
+}
+.right__contents_sale .roto-caption {
+  font-size:    130%;
+  text-align:     center;
+  color: #fff;
+}
+.right__contents_sale .roto-mask {
+  width:      100%;
+  height:     100%;
+  position:   absolute;
+  top:      0;
+  left:     0;
+  opacity:    0;  /* マスクを表示しない */
+  background-color: rgba(0,0,0,0.4);
+  -webkit-transition: all 0.6s ease;
+  transition:   all 0.6s ease;
+}
+.right__contents_sale:hover .roto-mask {
+  opacity:    1;  /* マスクを表示する */
+  padding-top:    130px; /* ホバーで下にずらす */
+}
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
