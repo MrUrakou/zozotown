@@ -1,31 +1,31 @@
-- if user_signed_in?
-  - unless session[:quantity] == nil || session[:quantity] == 0
-    .current-cart-quantity
-      %p #{session[:quantity]}
-.nav__bar
-  .site-title
-    = link_to 'ZOZOTOWN', root_path, class: "site-title"
-  - if user_signed_in?
-    .logout
-      = link_to destroy_user_session_path, method: :delete do
-        %i.fa.fa-sign-out
-    .user-edit
-      = link_to edit_user_registration_path(current_user) do
-        %i.fa.fa-pencil-square-o
-    .user-cart
-      = link_to carts_path do
-        %i.fa.fa-shopping-cart
-    - if true #(current_user.authority == 1 )
-      .product-edit
-        = link_to new_product_path(current_user) do
-          %i.fa.fa-shopping-bag
-      .admin-user-edit
-        = link_to edit_user_registration_path(current_user) do
-          %i.fa.fa-user-circle
-  - else
-    .new-user
-      = link_to new_user_registration_path do
-        %i.fa.fa-user-plus
-    .login
-      = link_to new_user_session_path do
-        %i.fa.fa-sign-in
+/ - if user_signed_in?
+/   - unless session[:quantity] == nil || session[:quantity] == 0
+/     .current-cart-quantity
+/       %p #{session[:quantity]}
+/ .nav__bar
+/   .site-title
+/     = link_to 'ZOZOTOWN', root_path, class: "site-title"
+/   - if user_signed_in?
+/     .logout
+/       = link_to destroy_user_session_path, method: :delete do
+/         %i.fa.fa-sign-out
+/     .user-edit
+/       = link_to edit_user_registration_path(current_user) do
+/         %i.fa.fa-pencil-square-o
+/     .user-cart
+/       = link_to carts_path do
+/         %i.fa.fa-shopping-cart
+/     - if true #(current_user.authority == 1 )
+/       .product-edit
+/         = link_to new_product_path(current_user) do
+/           %i.fa.fa-shopping-bag
+/       .admin-user-edit
+/         = link_to edit_user_registration_path(current_user) do
+/           %i.fa.fa-user-circle
+/   - else
+/     .new-user
+/       = link_to new_user_registration_path do
+/         %i.fa.fa-user-plus
+/     .login
+/       = link_to new_user_session_path do
+/         %i.fa.fa-sign-in
