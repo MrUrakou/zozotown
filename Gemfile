@@ -64,3 +64,5 @@ group :production do
   gem 'unicorn'
 end
 gem 'devise'
+gem 'rails_admin'
+gem 'cancan'
