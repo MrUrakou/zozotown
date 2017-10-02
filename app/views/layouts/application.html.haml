@@ -1,7 +1,8 @@
+
 !!!
 %html
   %head
-    %title ZOZOTOWN
+    %title zozotown
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -11,8 +12,5 @@
       = notice
     %p.alert
       = alert
-
-      = render partial: "products/nav-bar"
-
 
     = yield
