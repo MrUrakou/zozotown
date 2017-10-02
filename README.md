@@ -47,10 +47,11 @@ DB設計
 
 |type|string|null: false|
 |name|string|null: false|
+|kana_name|string|null: false|
 |address1|string|null: false|
 |address2|string|null: false|
 |postal_code|integer|null: false|
-|phone_number|integer|null: false|
+|phone|integer|null: false|
 
 
 ### Association
