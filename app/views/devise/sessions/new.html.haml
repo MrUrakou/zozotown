@@ -1,0 +1,18 @@
+#account-page.account-page
+  .account-page-wrapper
+    %h2 登録しているユーザーでログイン
+    / = render "devise/shared/links"
+    .account-page__inner--wrapper
+      .account-page__inner--wrapper--input
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .input_field_wrapper
+            .email_field_label
+              = f.label 'メールアドレス'
+            .email_field
+              = f.text_field :email, placeholder: "info@sample.jp", class: "input_email"
+          .input_field_wrapper
+            .password_field_label
+              = f.label 'パスワード'
+            .password_field
+              = f.password_field :password, autocomplete: "off", placeholder: "英 数 字（小文字）8 文 字 以 上", class: "input_password"
+          = f.submit "ログインする", class: 'sign_in-btn'
