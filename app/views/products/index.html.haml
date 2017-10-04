@@ -1,75 +1,55 @@
 !!!
 %body
+  = render partial: "nav-bar"
   .contents
     .main_contents
-      %h1 hello
-      / .left__contents
-      /   = render partial: "category-list"
-      / .center__contents
-      /   .center__contents_slider
-      /     %ul#slider
-      /       %li
-      /         = image_tag "galantis.jpeg"
-      /       / %li
-      /       /   = image_tag "img02.jpg"
-      /       / %li
-      /       /   = image_tag "img03.jpg"
-      /       / %li
-      /       /   = image_tag "img04.jpg"
-      /       / %li
-      /       /   = image_tag "img05.jpg"
-      /       / %li
-      /       /   = image_tag "img06.jpg"
-      /     %ul#slider-nav
-      /       %li
-      /         = image_tag "image01.jpg"
-      /       %li
-      /         = image_tag "image01.jpg"
-      /   .center__contents_wrapper
-      /     .center__contents_campain
-      /       %h5.center__contents_campain-title campain
-      /       %hr.center__contents_campain-line
-      /       .center__contents_campain__top
-      /         .center__contents_campain__top-product
-      /           = image_tag "image02.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image03.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image04.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image05.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image06.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image07.jpg"
-
-      /     .center__contents_campain
-      /       %h5.center__contents_campain-title
-      /       recommend/coordinate
-      /       %hr.center__contents_campain-line
-      /       .center__contents_campain__top
-      /         .center__contents_campain__top-product
-      /           = image_tag "image08.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image09.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image10.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image11.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image12.jpg"
-      /         .center__contents_campain__top-product
-      /           = image_tag "image13.jpg"
-      / .right__contents
-      /   .right__contents_sale
-      /     = image_tag 'cake.jpg', class: "right-contents-top-pop"
-      /     .roto-mask
-      /       .roto-caption 非売品
-      /   .right__contents_shop-news-title shop news
-      /   .right__contents_shop-news-list
-      /     = image_tag 'banana.jpg', class: "right-contents-shop-pop"
-      /     .right__contents_shop-news-detail
-      /       %p.shop-news-detail_title test words
-      /       %p.shop-news-detail_description sale sale sale sale sale sale sale sale sale sale sale sale
-      /   = render partial: "shop-list"
+      .left__contents
+        = render partial: "category-list"
+      .center__contents
+        .center__contents_wrapper
+          .center__contents_campain
+            %li
+              = image_tag "img01.jpg"
+            / %h5.center__contents_campain-title campain
+            / %hr.center__contents_campain-line
+            / .center__contents_campain__top
+            /   - @campain_products.each do |product|
+            /     .center__contents_campain__top-product
+            /       = link_to image_tag(product.image), detail_product_path(product)
+            /       %p.center__contents_campain_product-title
+            /         = product.name
+            /       %p.center__contents_campain_product-price
+          .center__contents_campain
+            %h5.center__contents_campain-title キャンペーン
+            %hr.center__contents_campain-line
+            .center__contents_campain__top
+              / - @recommend_products.each do |product|
+              /   .center__contents_campain__top-product
+              /     = link_to image_tag(product.image), detail_product_path(product)
+              /     %p.center__contents_campain_product-title
+              /       = product.name
+              /     %p.center__contents_campain_product-price
+          .center__contents_campain
+            %h5.center__contents_campain-title コーディネート
+            %hr.center__contents_campain-line
+            .center__contents_campain__top
+              .center__contents_campain__top-product
+              / .center__contents_campain__top-product
+              / .center__contents_campain__top-product
+              / .center__contents_campain__top-product
+              / .center__contents_campain__top-product
+              / .center__contents_campain__top-product
+      .right__contents
+        / .right__contents_sale
+        /   / = image_tag 'roto.jpeg', class: "right-contents-top-pop"
+        /   .roto-mask
+        /     .roto-caption 非売品
+        .right__contents_shop-news-title ショップニュース
+        .right__contents_shop-news-list
+          / = image_tag 'banana.jpeg', class: "right-contents-shop-pop"
+          .right__contents_shop-news-detail
+            %p.shop-news-detail_title agnes b.
+            %p.shop-news-detail_description おすすめアイテム
+        = render partial: "shop-list"
   .footer
+
