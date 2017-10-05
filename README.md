@@ -38,8 +38,8 @@ DB設計
 
 ### Associateion
 
-- has_many: delivery_addresses
-- has_many: porducts, through: :product_user
+- has_many :delivery_addresses
+- has_many :porducts, through: :product_user
 
 
 
@@ -56,10 +56,10 @@ DB設計
 
 ### Association
 
-- has_many: users
-- belongs_to: payment
-- belongs_to: shopping_cart
-- belongs_to: payment
+- has_many :users
+- belongs_to :payment
+- belongs_to :shopping_cart
+- belongs_to :payment
 
 
 
@@ -83,8 +83,8 @@ DB設計
 
 ### Association
 
-- has_many: users, through: :product_users
-- has_many: shopping_carts
+- has_many :users, through: :product_users
+- has_many :carts, through: :cart_products
 
 
 
@@ -98,12 +98,12 @@ DB設計
 
 ### Associacion
 
-belongs_to: user
-belongs_to: product
+belongs_to :user
+belongs_to :product
 
 
 
-## shopping_carts table
+## carts table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -117,18 +117,30 @@ belongs_to: product
 
 ### Association
 
-- belongs_to: user
-- belongs_to: payment
-- has_many: products
+- belongs_to :user
+- belongs_to :payment
+- has_many :products, through: :cart_products
 
 
+## cart_products table
+
+|Column|Type|Options|
+|------|----|-------|
+|cart_id|integer|
+|product_id|integer|
+
+
+### Associacion
+
+belongs_to :cart
+belongs_to :product
 
 ## payments
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|
-|shopping_cart_id|integer|
+|cart_id|integer|
 |delivery_address_id|integer|null: false|
 |delivery_date|integer|null: false|
 |payment_method|string|null: false|
@@ -136,6 +148,6 @@ belongs_to: product
 
 ### Association
 
-- has_one: delivery_address
-- belongs_to: shopping_cart
-- belongs_to: user
+- has_one :delivery_address
+- belongs_to :cart
+- belongs_to :user
