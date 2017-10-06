@@ -15,7 +15,7 @@ class Admin::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :explanation, :gender, :shop, :category, :image, :price, :size, :material, :contact_number, :brand, :color).merge(cart_id: params[:cart_id], user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :category, :image, :price, :product_code).merge(user_id: current_user.id)
   end
 
   def require_admin!
