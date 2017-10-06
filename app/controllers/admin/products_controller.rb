@@ -10,7 +10,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @product = Products.new(product_params)
+    @product = Product.new(product_params)
   end
 
   private
