@@ -1,0 +1,46 @@
+
+= render partial: "products/nav-bar"
+.admin-page
+  .admin-page__outer
+    .admin-page__prouct-title 商品登録
+    .admin-page__inner--wrapper
+      .product-select_field
+        .product-select_field_wrapper
+          / = form_tag(product_path, method: :get) do
+          /   .product_search_field_wrapper
+          /     = text_field_tag :name, "",class: 'input_search_product_code'
+          /   = submit_tag "検索する", class: 'admin-edit-btn'
+      .product-new_field
+        = form_for( @product, :url => {:controller => "admin/products", :action => :create }) do |f|
+          .product-new_field-top
+            .product-new_field-top__image
+              .product-new_field__show-image
+                %output#js-show-image-field
+              / .product-new_field__show-image-button#js-show-image 商品画像を選択する
+              = f.file_field :image, id: "file"
+            .product-new_field-top__detail
+              .product-new_field__name
+                .product-new_field__label
+                  = f.label :name, value: "商品名"
+                = f.text_area :name, class: "input_product_name", value: ""
+              .product-new_field__product-category
+                .product-new_field__label
+                  = f.label :category, value: "商品カテゴリ"
+                = f.select :category, [["トップス"], ["ジャケット/アウター"], ["パンツ"], ["オールインワン"], ["スカート"], ["ワンピース"], ["スーツ/ネクタイ"], ["バッグ"], ["シューズ"], ["ファッション雑貨"], ["財布/小物"], ["ヘアアクセサリー"], ["アクセサリー"], ["アンダーウェア"], ["レッグウェア"], ["帽子"], ["インテリア"], ["食器/キッチン"], ["雑貨/ホビー/スポーツ"], ["コスメ/香水"], ["音楽/本・雑誌"], ["水着/着物・浴衣"], ["マタニティ/ベビー"], ["その他"]], {include_blank: true}, {class: "input_product_category"}
+              .product-new_field__product-code
+                .product-new_field__label
+                  = f.label :product_code, value: "品番"
+                = f.text_area :product_code, class: "input_product_code", value: ""
+              .product-new_field__price
+                .product-new_field__label
+                  = f.label :price, value: "価格（税抜）"
+                = f.text_area :price, class: "input_product_price", value: ""
+              .product-new_field__count
+                .product-new_field__label
+                  = f.label :count, value: "在庫数"
+                = f.text_area :count, class: "input_product_count", value: ""
+          .product-new_field-bottom
+            = f.label :description, value: "商品説明"
+            = f.text_area :description, class: "input_product_description", value: ""
+            = f.submit "保 存", class: 'product-new-btn'
+

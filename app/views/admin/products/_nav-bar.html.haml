@@ -1,7 +1,7 @@
-/ - if user_signed_in?
-/   - unless session[:quantity] == nil || session[:quantity] == 0
-/     .current-cart-quantity
-/       %p #{session[:quantity]}
+- if user_signed_in?
+  - unless session[:quantity] == nil || session[:quantity] == 0
+    .current-cart-quantity
+      %p #{session[:quantity]}
 .nav__bar
   .site-title
     = link_to 'ZOZOTOWN', root_path, class: "site-title"
