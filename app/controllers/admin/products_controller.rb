@@ -11,11 +11,17 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = "入力してください"
+      render :new
+    end
   end
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :category, :image, :price, :product_code).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :category, :image, :price, :product_code, :count, :description)
   end
 
   def require_admin!
