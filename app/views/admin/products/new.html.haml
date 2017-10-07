@@ -11,13 +11,13 @@
           /     = text_field_tag :name, "",class: 'input_search_product_code'
           /   = submit_tag "検索する", class: 'admin-edit-btn'
       .product-new_field
-        = form_for @product do |f|
+        = form_for( @product, :url => {:controller => "admin/products", :action => :create }) do |f|
           .product-new_field-top
             .product-new_field-top__image
               .product-new_field__show-image
                 %output#js-show-image-field
-              .product-new_field__show-image-button#js-show-image 商品画像を選択する
-              = f.file_field :image, id: "file", style: "display:none", value: ""
+              / .product-new_field__show-image-button#js-show-image 商品画像を選択する
+              = f.file_field :image, id: "file"
             .product-new_field-top__detail
               .product-new_field__name
                 .product-new_field__label
@@ -43,3 +43,4 @@
             = f.label :description, value: "商品説明"
             = f.text_area :description, class: "input_product_description", value: ""
             = f.submit "保 存", class: 'product-new-btn'
+
