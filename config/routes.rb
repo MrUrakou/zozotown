@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :products, only: [:index]
 
   namespace :admin do
-    resources :products, only: [:index, :new, :create]
+    resources :products, only: [:index, :show, :new, :create]
   end
 end
