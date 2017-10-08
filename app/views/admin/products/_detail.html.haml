@@ -1,0 +1,19 @@
+.description__contents__delivery-alert
+  %p
+    この商品は、
+    %strong 最短明日の午前中
+    までに届けるつもりでいます！
+.description__contents__product-name
+  商品名：
+  = @product.name
+.description__contents__product-detail
+  %p 商品説明
+  = @product.description
+  %p 商品No：#{ @product.product_code }
+  %p カテゴリー：#{ @product.category }
+  %p 原産国： アレフガルド
+  %p 残り在庫数：#{ @product.count }
+.description__contents__parchace-button
+  .tmp-price #{ @product.price }円 税込
+  / = form_tag add_to_cart_user_order_path(current_user), method: "get" do
+  /   = submit_tag "カートに入れる", class: "add_cart_button"
