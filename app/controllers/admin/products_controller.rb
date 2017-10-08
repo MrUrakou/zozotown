@@ -3,6 +3,7 @@ class Admin::ProductsController < ApplicationController
   before_action :require_admin!
 
   def index
+    @products = Product.all
   end
 
   def new
