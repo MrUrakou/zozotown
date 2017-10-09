@@ -1,0 +1,51 @@
+= render partial: "products/nav-bar"
+.order-detail__contents
+  .order-detail__main_contents-wrapper
+    - if @quantity.nil? || @quantity.zero?
+      .order-detail__main_contents-empty カートに入っている商品はありません
+    - else
+      - @products.each do |product|
+        .order-detail__main_contents
+          .order-detail__main_contents_image
+            = link_to image_tag(product.image), detail_product_path(product)
+          .order-detail__main_contents__description
+            .order-detail__product-name #{product.name}
+            .order-detail__product_category #{product.product_category}
+            .order-detail__product_code #{product.product_code}
+            .order-detail__prduct_price ¥ #{product.price}
+            .order-detail__attention 返品・交換対象外商品
+  .order-detail__purchase_contents
+    .order-detail__purchase_contents__summary
+      .order-detail__summary
+        %table
+          %tr
+            %td.title 商品合計
+            %td.price ¥ #{@price}
+          %tr
+            %td.title 送料
+            %td.price ¥ 0
+          %tr
+            %td.title 手数料
+            %td.price ¥ 0
+        %hr.summary
+        %table
+          %tr
+            %td.title 合計金額
+            %td.price_summary ¥ #{@price}
+    .order-detail__purchase_contents__description
+      = link_to root_path do
+        = submit_tag "買い物を続ける", class: "purchase_button"
+      / = form_tag user_orders_path(current_user), method: "post" do
+      /   = submit_tag "商品を購入する", class: "purchase_button", id: "modal-open"
+  .clearfix
+.footer
+
+
+- if @quantity.nil? || @quantity.zero?
+  #modal-content
+    %p 商品をカートに入れてからでなおしてくるんだな
+    = link_to "Topへ戻る", root_path, id: "modal-close", class: "button-link"
+- else
+  #modal-content
+    %p ご注文ありがとうございました！
+    = link_to "Topへ戻る", root_path, id: "modal-close", class: "button-link"

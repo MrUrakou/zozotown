@@ -12,6 +12,7 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product = Product.new
+    render "products/show"
   end
 
   def create
