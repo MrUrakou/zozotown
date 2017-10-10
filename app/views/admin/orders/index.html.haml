@@ -35,8 +35,8 @@
     .order-detail__purchase_contents__description
       = link_to root_path do
         = submit_tag "買い物を続ける", class: "purchase_button"
-      / = form_tag user_orders_path(current_user), method: "post" do
-      /   = submit_tag "商品を購入する", class: "purchase_button", id: "modal-open"
+      = form_tag admin_orders_path(current_user), method: "post" do
+        = submit_tag "商品を購入する", class: "purchase_button", id: "modal-open"
   .clearfix
 .footer
 
