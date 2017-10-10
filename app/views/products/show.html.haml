@@ -2,29 +2,8 @@
 .product-detail__contents
   .product-detail__main_contents
     .product-detail__contents_image
-      / .product-detail__contents_slider
-      /   %ul#detail-slider
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
-      /   %ul#detail-slider-nav
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
-      /     %li
-      /       = image_tag @product.image
+    %li
+      = image_tag @product.image
     .product-detail__contents__description
       .product-detail__contents__item-description
         = render partial: "detail"
