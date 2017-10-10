@@ -16,8 +16,8 @@
             .product-new_field-top__image
               .product-new_field__show-image
                 %output#js-show-image-field
-              / .product-new_field__show-image-button#js-show-image 商品画像を選択する
-              = f.file_field :image, id: "file"
+              .product-new_field__show-image-button#js-show-image 商品画像を選択する
+              = f.file_field :image, id: "file", style: "display:none", value: ""
             .product-new_field-top__detail
               .product-new_field__name
                 .product-new_field__label
