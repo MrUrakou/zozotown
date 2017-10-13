@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "admin/products#index"
+  root "users/products#index"
   resources :users, only:[:edit, :update]
-  resources :products, only: [:index]
+
+  namespace :users do
+    resources :products, only: [:index, :show]
+    resources :carts, only: [:index, :create]
+  end
 
   namespace :admin do
-    resources :products, only: [:index, :show, :new, :create]
-    resources :orders, only: [:show]
+    resources :products, only: [:index, :new, :create]
   end
 end
