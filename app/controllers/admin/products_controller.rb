@@ -2,16 +2,8 @@ class Admin::ProductsController < ApplicationController
 
   before_action :require_admin!
 
-  def index
-    @products = Product.all
-  end
-
   def new
     @product = Product.new
-  end
-
-  def show
-    @product = Product.find(params[:id])
   end
 
   def create
@@ -31,7 +23,7 @@ class Admin::ProductsController < ApplicationController
 
   def require_admin!
     if current_user.nil? || !current_user.admin?
-      redirect_to root_path, notice: 'アクセス権限がありません'
+      redirect_to root_path, notice: 'ページがありません'
     end
   end
 end

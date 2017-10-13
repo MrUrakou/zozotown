@@ -1,19 +1,20 @@
-= render partial: "products/nav-bar"
+
+= render partial: "users/products/nav-bar"
 .order-detail__contents
   .order-detail__main_contents-wrapper
-    - if @quantity.nil? || @quantity.zero?
-      .order-detail__main_contents-empty カートに入っている商品はありません
-    - else
-      - @products.each do |product|
-        .order-detail__main_contents
-          .order-detail__main_contents_image
-            = link_to image_tag(product.image), detail_product_path(product)
-          .order-detail__main_contents__description
-            .order-detail__product-name #{product.name}
-            .order-detail__product_category #{product.product_category}
-            .order-detail__product_code #{product.product_code}
-            .order-detail__prduct_price ¥ #{product.price}
-            .order-detail__attention 返品・交換対象外商品
+    / - if @quantity.nil? || @quantity.zero?
+    /   .order-detail__main_contents-empty カートに入っている商品はありません
+    / - else
+    - @products.each do |product|
+      .order-detail__main_contents
+        .order-detail__main_contents_image
+          = link_to image_tag(product.image), users_product_path(product)
+        .order-detail__main_contents__description
+          .order-detail__product-name #{product.name}
+          .order-detail__product_category #{product.category}
+          .order-detail__product_code #{product.product_code}
+          .order-detail__prduct_price ¥ #{product.price}
+          .order-detail__attention 返品・交換対象外商品
   .order-detail__purchase_contents
     .order-detail__purchase_contents__summary
       .order-detail__summary
@@ -35,7 +36,7 @@
     .order-detail__purchase_contents__description
       = link_to root_path do
         = submit_tag "買い物を続ける", class: "purchase_button"
-      = form_tag admin_orders_path(current_user), method: "post" do
+      = form_tag users_carts_path(current_user), method: "post" do
         = submit_tag "商品を購入する", class: "purchase_button", id: "modal-open"
   .clearfix
 .footer

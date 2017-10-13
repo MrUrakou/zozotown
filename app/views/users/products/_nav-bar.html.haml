@@ -13,8 +13,8 @@
       = link_to edit_user_registration_path(current_user) do
         %i.fa.fa-pencil-square-o
     .user-cart
-      / = link_to carts_path do
-      /   %i.fa.fa-shopping-cart
+      = link_to users_carts_path do
+        %i.fa.fa-shopping-cart
     - if true #(current_user.authority == 1 )
       .product-edit
         = link_to new_admin_product_path() do
