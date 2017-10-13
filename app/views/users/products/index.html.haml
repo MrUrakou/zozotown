@@ -8,31 +8,16 @@
       .center__contents
         .center__contents_wrapper
           .center__contents_campain
-            %h5.center__contents_campain-title キャンペーン
+            %h5.center__contents_campain-title おすすめ
             %hr.center__contents_campain-line
               .center__contents_campain__top
               - @products.each do |product|
                 .center__contents_campain__top-product
-                  = link_to image_tag(product.image), admin_product_path(product)
+                  = link_to image_tag(product.image), users_product_path(product)
                   %p.center__contents_campain_product-title
                     = product.name
                   %p.center__contents_campain_product-price
                     #{ product.price } 円 税込
-            / .center__contents_campain
-          /   %h5.center__contents_campain-title　コーディネート
-          /   %hr.center__contents_campain-line
-          /   .center__contents_campain__top
-          /     - @products.each do |product|
-          /       .center__contents_campain__top-product
-          /         = link_to image_tag(product.image), admin_product_path(product)
-          /         %p.center__contents_campain_product-title
-          /           = product.name
-          /         %p.center__contents_campain_product-price
-          / .center__contents_campain
-          /   %h5.center__contents_campain-title コーディネート
-          /   %hr.center__contents_campain-line
-          /   .center__contents_campain__top
-          /     .center__contents_campain__top-product
       .right__contents
         .right__contents_shop-news-title ショップニュース
         .right__contents_shop-news-list
