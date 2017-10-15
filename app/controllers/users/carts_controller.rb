@@ -1,6 +1,12 @@
 class Users::CartsController < ApplicationController
   def index
     @products = current_user.products
+
+    @price = 0
+    @products.each do |product|
+      @price += product[:price]
+    end
+
   end
 
   def create
