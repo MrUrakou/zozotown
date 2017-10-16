@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   resources :users, only:[:edit, :update]
 
   namespace :users do
+    resources :carts, only: [:index, :create] do
+      post 'purchase', on: :collection
+    end
     resources :products, only: [:index, :show]
-    resources :carts, only: [:index, :create]
   end
 
   namespace :admin do
-    resources :products, only: [:index, :new, :create]
+    resources :products, only: [:new, :create]
   end
 end
