@@ -37,7 +37,7 @@
       = link_to root_path do
         = submit_tag "買い物を続ける", class: "purchase_button"
       = form_tag action: "purchase", method: "post" do
-        %script.payjp-button{"data-key": "sk_test_9a23d1e8a624e7c8de812801", src: "https://checkout.pay.jp", type: "text/javascript"}
+        %script.payjp-button{"data-key": "#{PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript"}
   .clearfix
 .footer
 
