@@ -25,7 +25,11 @@ class Users::CartsController < ApplicationController
   def purchase
     Payjp.api_key = PAYJP_SECRET_KEY
     Payjp::Charge.create(currency: 'jpy', amount: @price, card: params['payjp-token'])
-    redirect_to root_path, notice: "支払いが完了しました"
+    carts = Cart.where(user_id: current_user.id)
+    carts.each do |cart|
+      cart.destroy
+    end
+      redirect_to root_path, notice: "支払いが完了しました"
   end
 
   private
