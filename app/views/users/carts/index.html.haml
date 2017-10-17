@@ -15,6 +15,7 @@
           .order-detail__product_code #{product.product_code}
           .order-detail__prduct_price ¥ #{product.price}
           .order-detail__attention 返品・交換対象外商品
+    = paginate(@products)
   .order-detail__purchase_contents
     .order-detail__purchase_contents__summary
       .order-detail__summary
