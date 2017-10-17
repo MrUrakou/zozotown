@@ -8,7 +8,7 @@
     - @products.each do |product|
       .order-detail__main_contents
         .order-detail__main_contents_image
-          = link_to image_tag(product.image), users_product_path(product)
+          = link_to image_tag(product.image), users_cart_path(product), method: "delete"
         .order-detail__main_contents__description
           .order-detail__product-name #{product.name}
           .order-detail__product_category #{product.category}
