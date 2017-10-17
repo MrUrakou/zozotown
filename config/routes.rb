@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only:[:edit, :update]
 
   namespace :users do
-    resources :carts, only: [:index, :create] do
+    resources :carts, only: [:index, :create, :destroy] do
       post 'purchase', on: :collection
     end
     resources :products, only: [:index, :show]
