@@ -17,7 +17,7 @@
                   %p.center__contents_campain_product-title
                     = product.name
                   %p.center__contents_campain_product-price
-                    #{ product.price } 円 税込
+                    #{ number_to_currency(product.price) }  税込
         .center__contents_wrapper
           .center__contents_campain
             %h5.center__contents_campain-title 定番アイテム
@@ -29,7 +29,7 @@
                   %p.center__contents_campain_product-title
                     = product.name
                   %p.center__contents_campain_product-price
-                    #{ product.price } 円  税込
+                    #{ number_to_currency(product.price) }  税込
             = paginate(@classic_products)
       .right__contents
         .right__contents_shop-news-title ショップニュース
@@ -40,4 +40,3 @@
             %p.shop-news-detail_description 送料自由
         = render partial: "shop-list"
   .footer
-
