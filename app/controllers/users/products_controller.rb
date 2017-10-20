@@ -8,4 +8,3 @@ class Users::ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 end
-User.where(created_at: 1.day.ago.all_day)
