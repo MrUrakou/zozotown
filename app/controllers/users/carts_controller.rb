@@ -29,7 +29,8 @@ class Users::CartsController < ApplicationController
     carts.each do |cart|
       cart.destroy
     end
-      redirect_to root_path, notice: "支払いが完了しました"
+    SampleMailer.send_when_update(current_user).deliver
+    redirect_to root_path, notice: "支払いが完了しました"
   end
 
   private
