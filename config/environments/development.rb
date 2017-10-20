@@ -34,7 +34,6 @@ Rails.application.configure do
     address:             'smtp.gmail.com',
     domain:              'smtp.gmail.com',
     user_name:           'expertexpertmailler@gmail.com',
-    password:            'mailler1020',
     authentication:      'login',
     enable_starttls_auto: true
   }
