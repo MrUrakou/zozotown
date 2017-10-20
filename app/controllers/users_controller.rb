@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
+      SampleMailer.send_when_update(current_user).deliver
       redirect_to root_path
     else
       render :edit

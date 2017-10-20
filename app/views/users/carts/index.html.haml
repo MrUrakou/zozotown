@@ -13,7 +13,7 @@
           .order-detail__product-name #{product.name}
           .order-detail__product_category #{product.category}
           .order-detail__product_code #{product.product_code}
-          .order-detail__prduct_price ¥ #{product.price}
+          .order-detail__prduct_price #{ number_to_currency(product.price) }
           .order-detail__attention 返品・交換対象外商品
     = paginate(@products)
   .order-detail__purchase_contents
@@ -22,18 +22,18 @@
         %table
           %tr
             %td.title 商品合計
-            %td.price ¥ #{@price}
+            %td.price  #{ number_to_currency(@price) }
           %tr
             %td.title 送料
-            %td.price ¥ 0
+            %td.price 0円
           %tr
             %td.title 手数料
-            %td.price ¥ 0
+            %td.price 0円
         %hr.summary
         %table
           %tr
             %td.title 合計金額
-            %td.price_summary ¥ #{@price}
+            %td.price_summary #{ number_to_currency(@price) }
     .order-detail__purchase_contents__description
       = link_to root_path do
         = submit_tag "買い物を続ける", class: "purchase_button"
@@ -41,7 +41,6 @@
         %script.payjp-button{"data-key": "#{PAYJP_PUBLIC_KEY}", src: "https://checkout.pay.jp", type: "text/javascript"}
   .clearfix
 .footer
-
 
 / - if @quantity.nil? || @quantity.zero?
 /   #modal-content
