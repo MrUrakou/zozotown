@@ -6,6 +6,45 @@
       .left__contents
         = render partial: "category-list"
       .center__contents
+        .center__contents_slider
+          %ul#slider
+            %li
+              = image_tag "img30.jpg"
+            %li
+              = image_tag "img31.jpg"
+            %li
+              = image_tag "img32.jpg"
+            %li
+              = image_tag "img33.jpg"
+            %li
+              = image_tag "img34.jpg"
+            %li
+              = image_tag "img25.jpg"
+            %li
+              = image_tag "img40.jpg"
+            %li
+              = image_tag "img41.jpg"
+            %li
+              = image_tag "img42.jpg"
+            %li
+              = image_tag "img43.jpg"
+            %li
+              = image_tag "img44.jpg"
+            %li
+              = image_tag "img45.jpg"
+          / %ul#slider-nav
+          /   %li
+          /     = image_tag "img30.jpg"
+          /   %li
+          /     = image_tag "img31.jpg"
+          /   %li
+          /     = image_tag "img32.jpg"
+          /   %li
+          /     = image_tag "img33.jpg"
+          /   %li
+          /     = image_tag "img34.jpg"
+          /   %li
+          /     = image_tag "img25.jpg"
         .center__contents_wrapper
           .center__contents_campain
             %h5.center__contents_campain-title 新着アイテム
@@ -34,9 +73,9 @@
       .right__contents
         .right__contents_shop-news-title ショップニュース
         .right__contents_shop-news-list
-          / = image_tag 'shipping_cost.jpeg', class: "right-contents-shop-pop"
+          = image_tag 'img18.jpg', class: "right-contents-shop-pop"
           .right__contents_shop-news-detail
             %p.shop-news-detail_title
-            %p.shop-news-detail_description 送料自由
+            %p.shop-news-detail_description
         = render partial: "shop-list"
   .footer

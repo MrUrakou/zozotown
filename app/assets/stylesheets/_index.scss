@@ -57,7 +57,19 @@
     float: right;
   }
 }
+.subbar {
+  background-color: #EEEEEE;
+  overflow: hidden;
+  width: 100%;
+  padding-left: 180px;
+  font-size: 14px;
 
+  p {
+    float: left;
+    padding-left: 20px;
+    color:  #777777;
+  }
+}
 .contentHeader {
     width: 100%;
     border-bottom: 0;
