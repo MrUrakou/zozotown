@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :carts, only: [:index, :create, :destroy] do
       post 'purchase', on: :collection
     end
-    resources :products, only: [:index, :show]
+    resources :products, only: [:index, :show] do
+      resources :reviews, only: [:new, :create]
+    end
   end
 
   namespace :admin do
