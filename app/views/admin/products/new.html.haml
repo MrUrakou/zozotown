@@ -5,11 +5,6 @@
     .admin-page__prouct-title 商品登録
     .admin-page__inner--wrapper
       .product-select_field
-        .product-select_field_wrapper
-          / = form_tag(product_path, method: :get) do
-          /   .product_search_field_wrapper
-          /     = text_field_tag :name, "",class: 'input_search_product_code'
-          /   = submit_tag "検索する", class: 'admin-edit-btn'
       .product-new_field
         = form_for( @product, :url => {:controller => "admin/products", :action => :create }) do |f|
           .product-new_field-top
