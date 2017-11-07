@@ -37,16 +37,10 @@ DB設計
 |address2|string|null: false|
 |phone|integer|null: false|
 
-|gender|string|null: false|
-|birthday|integer|null: false|
-|postal_code|integer|null: false|
-|point|integer|
-
 
 ### Associateion
 
-- has_many :delivery_addresses
-- has_many :porducts, through: :product_user
+- has_many :porducts, through: :carts
 
 
 
@@ -65,8 +59,7 @@ DB設計
 
 ### Association
 
-- has_many :users, through: :product_users
-- has_many :carts, through: :cart_products
+- has_many :users, through: :carts
 
 
 
